@@ -3,7 +3,7 @@ x=read.table('household_power_consumption.txt',header=TRUE, sep=';', stringsAsFa
 dataset=subset(x,x$Date=='1/2/2007' | x$Date=='2/2/2007')
 
 #changing class for relevant variables
-dataset$Global_active_power=as.numeric(x$Global_active_power)
+dataset$Global_active_power=as.numeric(dataset$Global_active_power)
 dataset$Time=strptime(paste(dataset$Date, dataset$Time),format="%d/%m/%Y %H:%M")
 dataset$Date=as.Date(dataset$Date, format="%d/%m/%Y")
 dataset$Global_active_power=as.numeric(dataset$Global_active_power)
